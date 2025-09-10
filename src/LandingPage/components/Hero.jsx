@@ -25,7 +25,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-sm md:text-base text-[#2A6BFF] font-medium tracking-wider uppercase"
           >
-            .BY <a href="https://fernandesinnovations.com">FERNANDES INNOVATIONS</a>
+            .BY <a href="https://fernandesinnovations.com" target="_blank" rel="noopener noreferrer">FERNANDES INNOVATIONS</a>
           </motion.div>
 
           {/* Main Headline */}

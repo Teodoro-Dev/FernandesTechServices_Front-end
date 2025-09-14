@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaLinkedin, FaDribbble } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { MdEmail, MdPhone } from "react-icons/md"
 
 function Icon({ children }) {
@@ -35,29 +35,33 @@ export default function Footer() {
           <p className="text-white/70 mb-6">Tell us about your project and we'll get back quickly.</p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a href="mailto:tech@fernandesinnovations.com" className="px-5 py-2.5 rounded-full bg-white text-black font-medium hover:bg-white/90 transition inline-flex items-center gap-2">
-              <MdEmail className="w-5 h-5" /> tech@fernandesinnovations.com
-            </a>
-            <a href="tel:+351912345678" className="px-5 py-2.5 rounded-full border border-white/20 text-white hover:border-white/40 transition inline-flex items-center gap-2">
-              <MdPhone className="w-5 h-5" /> +351 91 234 56 78
+              <MdEmail className="w-5 h-5" /> Mail
             </a>
           </div>
         </div>
 
         <div className="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-          <a href="/"><img src="/FernandesS.png" alt="Fernandes Tech Services" className="h-7 w-auto" />
+          <a href="/"><img src="/FernandesS.png" alt="Fernandes Tech Services" className="max-h-7 w-auto" />
           </a>
             <div>
-              <p className="text-white/80">Proudly building from Portugal</p>
-              <p className="text-white/40 text-sm">© {new Date().getFullYear()} <a href="https://fernandesinnovations.com">Fernandes Innovations </a>. Todos os direitos reservados.</p>
+              <p className="text-white/80">Proudly building from Europe</p>
+              <p className="text-white/40 text-sm">© {new Date().getFullYear()} <a href="https://fernandesinnovations.com">Fernandes Innovations. </a> Todos os direitos reservados.</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <a href="https://dribbble.com" target="_blank" rel="noreferrer" aria-label="Dribbble"><Icon><FaDribbble /></Icon></a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><Icon><FaInstagram /></Icon></a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><Icon><FaFacebook /></Icon></a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Icon><FaLinkedin /></Icon></a>
-          </div>
+          <div className="flex items-center justify-center gap-3 sm:justify-start">
+  <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+    <Icon><FaInstagram /></Icon>
+  </a>
+  <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+    <Icon><FaFacebook /></Icon>
+  </a>
+  <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+    <Icon><FaLinkedin /></Icon>
+  </a>
+</div>
+
+
         </div>
       </div>
     </footer>

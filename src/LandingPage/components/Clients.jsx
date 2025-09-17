@@ -48,7 +48,6 @@ export default function Clients() {
     <section id="clients" className="bg-[#0B0B1A] px-6 sm:px-10 md:px-16">
       <div className="max-w-6xl mx-auto py-16">
         <h2 className="text-white text-2xl md:text-3xl font-semibold mb-6">Trusted by</h2>
-        <p className="text-white/60 mb-8">Add or replace logos any time.</p>
         <div 
           className="relative overflow-hidden" 
           onWheel={(e) => setSpeed((s) => Math.min(120, Math.max(10, s + e.deltaY * 0.05)))}

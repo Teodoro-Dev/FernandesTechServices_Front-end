@@ -1,16 +1,17 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   return (
     <div className="fixed inset-x-0 top-0 z-50 backdrop-blur border-b border-white/10 bg-[#0B0B1A]/70">
       <div className="max-w-6xl mx-auto px-6 sm:px-10 md:px-16 h-16 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3">
           <img src="/FernandesS.png" alt="Fernandes Tech Services" className="h-7 w-auto" />
-        </a>
+        </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-white/70">
           <a href="#services" className="hover:text-white transition">Services</a>
-          <a href="#clients" className="hover:text-white transition">Clients</a>
+          <Link to="/portfolio" className="hover:text-white transition">Portfolio</Link>
           <a href="#about" className="hover:text-white transition">About</a>
           <a href="#contact" className="hover:text-white transition">Contact</a>
         </nav>
@@ -25,7 +26,7 @@ export default function Navbar() {
         <div className="md:hidden border-t border-white/10 bg-[#0B0B1A]/90">
           <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3 text-white/80">
             <a onClick={() => setOpen(false)} href="#services" className="hover:text-white">Services</a>
-            <a onClick={() => setOpen(false)} href="#clients" className="hover:text-white">Clients</a>
+            <Link onClick={() => setOpen(false)} to="/portfolio" className="hover:text-white">Portfolio</Link>
             <a onClick={() => setOpen(false)} href="#about" className="hover:text-white">About</a>
             <a onClick={() => setOpen(false)} href="#contact" className="hover:text-white">Contact</a>
           </div>

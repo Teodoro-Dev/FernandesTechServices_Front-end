@@ -1,5 +1,6 @@
 import { motion, useAnimationFrame } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Clients() {
   const logos = [
@@ -66,6 +67,32 @@ export default function Clients() {
           </div>
           <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0B0B1A] to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0B0B1A] to-transparent" />
+        </div>
+
+        {/* New CTA Button Section */}
+        <div className="mt-12 text-center">
+          <Link
+            to="/portfolio"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0B0B1A] font-medium hover:bg-white/90 transition-all duration-300 transform hover:scale-105"
+          >
+            Discover Our Success Stories
+            <svg
+              className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </Link>
+          <p className="mt-3 text-white/60 text-sm">
+            Join the ranks of our satisfied clients
+          </p>
         </div>
       </div>
     </section>

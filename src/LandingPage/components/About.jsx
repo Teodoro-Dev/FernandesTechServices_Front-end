@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 
 export default function About() {
   const techCategories = [
@@ -71,9 +73,18 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-16"
         >
-          <p className="text-white/60 text-sm">
+          <p className="text-white/60 text-sm mb-8">
             We are proud to deliver secure web products with high performance, coding standards and exceptional design.
           </p>
+          
+          {/* CTA Button */}
+          <Link
+            to="/about"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0B0B1A] font-medium hover:bg-white/90 transition-all duration-300 transform hover:scale-105"
+          >
+            Saiba mais sobre nós
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1" />
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { ArrowRight, Info } from 'lucide-react'
 
 const icons = {
   design: (
@@ -49,7 +51,7 @@ export default function Services() {
     <section id="services" className="bg-[#0B0B1A] text-white px-6 sm:px-10 md:px-16">
       <div className="max-w-6xl mx-auto py-20 md:py-28">
         <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl md:text-3xl font-semibold mb-8">What we do</motion.h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           <ServiceCard title="Design & UX" icon={icons.design} desc="Distinct brand identities and human-centered interfaces." />
           <ServiceCard title="Web & Mobile" icon={icons.dev} desc="Accessible, scalable apps built with a modern stack." />
           <ServiceCard title="E‑commerce" icon={icons.shop} desc="High-performance storefronts with robust integrations." />
@@ -57,6 +59,24 @@ export default function Services() {
           <ServiceCard title="Cloud & DevOps" icon={icons.cloud} desc="Secure infrastructure, CI/CD and observability." />
           <ServiceCard title="Consulting" icon={icons.consult} desc="Strategy, audits and performance optimization." />
         </div>
+
+        {/* CTA Buttons */}
+        <motion.div 
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <Link
+            to="/services"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0B0B1A] font-medium hover:bg-white/90 transition-all duration-300 transform hover:scale-105"
+          >
+            Veja os nossos serviços
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1" />
+          </Link>
+          
+        </motion.div>
       </div>
     </section>
   )

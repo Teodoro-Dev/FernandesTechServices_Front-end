@@ -75,7 +75,7 @@ export default function Clients() {
             to="/portfolio"
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#0B0B1A] font-medium hover:bg-white/90 transition-all duration-300 transform hover:scale-105"
           >
-            Discover Our Success Stories Around The World
+            Discover Our Success Stories
             <svg
               className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1"
               fill="none"

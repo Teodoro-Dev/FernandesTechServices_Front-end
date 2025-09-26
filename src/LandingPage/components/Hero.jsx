@@ -64,13 +64,13 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
           >
             <a 
-              href="#contact" 
+              href="/contact" 
               className="px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-white/90 transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
             >
               Get in touch
             </a>
             <a 
-              href="#services" 
+              href="/portfolio" 
               className="px-8 py-4 rounded-full border-2 border-white/30 text-white font-semibold hover:border-white/60 hover:bg-white/5 transition-all duration-300 transform hover:scale-105"
             >
               View our work

@@ -10,10 +10,10 @@ export default function Navbar() {
           <img src="/FernandesS.png" alt="Fernandes Tech Services" className="h-7 w-auto" />
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm text-white/70">
-          <a href="#services" className="hover:text-white transition">Services</a>
+          <a href="/services" className="hover:text-white transition">Services</a>
           <Link to="/portfolio" className="hover:text-white transition">Portfolio</Link>
-          <a href="#about" className="hover:text-white transition">About</a>
-          <a href="#contact" className="hover:text-white transition">Contact</a>
+          <Link to="/about" className="hover:text-white transition">About</Link>
+          <Link to="/contact" className="hover:text-white transition">Contact</Link>
         </nav>
         <button onClick={() => setOpen((v) => !v)} className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-white/15 text-white/80 hover:text-white hover:border-white/30">
           <span className="sr-only">Toggle menu</span>
@@ -25,10 +25,10 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t border-white/10 bg-[#0B0B1A]/90">
           <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3 text-white/80">
-            <a onClick={() => setOpen(false)} href="#services" className="hover:text-white">Services</a>
+            <a onClick={() => setOpen(false)} href="/services" className="hover:text-white">Services</a>
             <Link onClick={() => setOpen(false)} to="/portfolio" className="hover:text-white">Portfolio</Link>
-            <a onClick={() => setOpen(false)} href="#about" className="hover:text-white">About</a>
-            <a onClick={() => setOpen(false)} href="#contact" className="hover:text-white">Contact</a>
+            <Link onClick={() => setOpen(false)} to="/about" className="hover:text-white">About</Link>
+            <Link onClick={() => setOpen(false)} to="/contact" className="hover:text-white">Contact</Link>
           </div>
         </div>
       )}

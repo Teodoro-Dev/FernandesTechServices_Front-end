@@ -6,6 +6,9 @@ import About from './LandingPage/components/About.jsx'
 import Clients from './LandingPage/components/Clients.jsx'
 import Footer from './LandingPage/components/Footer.jsx'
 import Portfolio from './LandingPage/Pages/Portfolio.jsx'
+import ServicesPage from './LandingPage/Pages/Services.jsx'
+import AboutPage from './LandingPage/Pages/about.jsx'
+import ContactPage from './LandingPage/Pages/contact.jsx'
 
 export default function App() {
   return (
@@ -17,12 +20,15 @@ export default function App() {
             <main className="pt-16">
               <Hero />
               <Services />
-              <About />
               <Clients />
+              <About />
               <Footer />
             </main>
           } />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
     </Router>

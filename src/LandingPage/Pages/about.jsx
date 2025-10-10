@@ -85,8 +85,8 @@ const values = [
 const timeline = [
   {
     year: "2023",
-    title: "Fundação na Europa",
-    description: "Nascemos com a missão de revolucionar o desenvolvimento tecnológico europeu, combinando inovação com tradição de qualidade.",
+    title: "Fundação",
+    description: "Nascemos com a missão de revolucionar o desenvolvimento tecnológico, combinando inovação com tradição de qualidade.",
     highlight: true
   },
   {
@@ -373,7 +373,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              Somos uma empresa de tecnologia nascida na Europa em 2023, com a missão de 
+              Somos uma empresa de tecnologia nascida em 2023, com a missão de 
               revolucionar o desenvolvimento digital através de soluções inovadoras e experiências 
               excepcionais que conectam pessoas e transformam negócios.
             </motion.p>

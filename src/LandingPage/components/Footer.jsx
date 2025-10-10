@@ -34,7 +34,7 @@ export default function Footer() {
           <h3 className="text-xl md:text-2xl font-semibold mb-2">Let's talk</h3>
           <p className="text-white/70 mb-6">Tell us about your project and we'll get back quickly.</p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <a href="mailto:tech@fernandesinnovations.com" className="px-5 py-2.5 rounded-full bg-white text-black font-medium hover:bg-white/90 transition inline-flex items-center gap-2">
+            <a href="mailto:ai@fernandesinnovations.com" className="px-5 py-2.5 rounded-full bg-white text-black font-medium hover:bg-white/90 transition inline-flex items-center gap-2">
               <MdEmail className="w-5 h-5" /> Mail
             </a>
           </div>
@@ -45,7 +45,7 @@ export default function Footer() {
           <a href="/"><img src="/FernandesS.png" alt="Fernandes Tech Services" className="max-h-7 w-auto" />
           </a>
             <div>
-              <p className="text-white/80">Proudly building from Europe</p>
+              <p className="text-white/80">Proudly building from the World</p>
               <p className="text-white/40 text-sm">© {new Date().getFullYear()} <a href="https://fernandesinnovations.com">Fernandes Innovations. </a> Todos os direitos reservados.</p>
             </div>
           </div>

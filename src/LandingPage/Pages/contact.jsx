@@ -53,23 +53,23 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "tech@fernandesinnovations.com",
+    value: "ai@fernandesinnovations.com",
     description: "Drop us a line anytime",
     color: "from-blue-500 to-cyan-500",
-    action: "mailto:tech@fernandesinnovations.com"
+    action: "mailto:ai@fernandesinnovations.com"
   },
-  {
+  /*{
     icon: Phone,
     title: "Phone",
     value: "+351 937 503 505",
     description: "Mon-Fri from 9am to 6pm",
     color: "from-emerald-500 to-teal-500",
     action: "tel:+351937503505"
-  },
+  },*/
   {
     icon: MapPin,
     title: "Location",
-    value: "Europe",
+    value: "From the World",
     description: "Building from the heart of Europe",
     color: "from-purple-500 to-pink-500",
     action: "#"
@@ -452,7 +452,7 @@ export default function Contact() {
                   <h4 className="font-bold text-white">Global Reach, Local Touch</h4>
                 </div>
                 <p className="text-white/70 text-sm">
-                  Based in Europe but serving clients worldwide. We combine global expertise with personalized, local service.
+                  Serving clients worldwide. We combine global expertise with personalized, local service.
                 </p>
               </motion.div>
             </motion.div>

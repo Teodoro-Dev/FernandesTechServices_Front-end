@@ -25,10 +25,30 @@ export default function App() {
               <Footer />
             </main>
           } />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/portfolio" element={
+            <>
+              <Portfolio />
+              <Footer />
+            </>
+          } />
+          <Route path="/services" element={
+            <>
+              <ServicesPage />
+              <Footer />
+            </>
+          } />
+          <Route path="/about" element={
+            <>
+              <AboutPage />
+              <Footer />
+            </>
+          } />
+          <Route path="/contact" element={
+            <>
+              <ContactPage />
+              <Footer />
+            </>
+          } />
         </Routes>
       </div>
     </Router>

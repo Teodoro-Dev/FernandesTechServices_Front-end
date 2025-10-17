@@ -3,7 +3,6 @@ import { useState, useRef } from 'react'
 import { 
   Send, 
   Mail, 
-  Phone, 
   MapPin, 
   Clock,
   MessageCircle,
@@ -11,10 +10,10 @@ import {
   Building,
   Sparkles,
   CheckCircle,
-  Globe,
   Linkedin,
   Instagram,
-  Facebook
+  Facebook,
+  Github
 } from 'lucide-react'
 
 const FloatingParticles = () => {
@@ -54,55 +53,33 @@ const contactInfo = [
     icon: Mail,
     title: "Email",
     value: "ai@fernandesinnovations.com",
-    description: "Drop us a line anytime",
+    description: "24h response time",
     color: "from-blue-500 to-cyan-500",
     action: "mailto:ai@fernandesinnovations.com"
   },
-  /*{
-    icon: Phone,
-    title: "Phone",
-    value: "+351 937 503 505",
-    description: "Mon-Fri from 9am to 6pm",
-    color: "from-emerald-500 to-teal-500",
-    action: "tel:+351937503505"
-  },*/
   {
     icon: MapPin,
     title: "Location",
     value: "From the World",
-    description: "Building from the heart of Europe",
+    description: "Building globally",
     color: "from-purple-500 to-pink-500",
     action: "#"
   },
   {
     icon: Clock,
-    title: "Response Time",
-    value: "< 24h",
-    description: "We'll get back to you quickly",
-    color: "from-orange-500 to-red-500",
+    title: "Working Hours",
+    value: "Mon-Fri 9am-6pm",
+    description: "CET Timezone",
+    color: "from-emerald-500 to-teal-500",
     action: "#"
   }
 ]
 
 const socialLinks = [
-  {
-    icon: Linkedin,
-    name: "LinkedIn",
-    url: "https://linkedin.com",
-    color: "from-blue-600 to-blue-700"
-  },
-  {
-    icon: Instagram,
-    name: "Instagram",
-    url: "https://instagram.com",
-    color: "from-pink-500 to-rose-600"
-  },
-  {
-    icon: Facebook,
-    name: "Facebook",
-    url: "https://facebook.com",
-    color: "from-blue-500 to-blue-600"
-  }
+  { icon: Linkedin, url: "https://linkedin.com", color: "from-blue-600 to-blue-700" },
+  { icon: Instagram, url: "https://instagram.com", color: "from-pink-500 to-rose-600" },
+  { icon: Facebook, url: "https://facebook.com", color: "from-blue-500 to-blue-600" },
+  { icon: Github, url: "https://github.com", color: "from-gray-700 to-gray-900" }
 ]
 
 const ContactCard = ({ info, index }) => {
@@ -160,53 +137,34 @@ const InputField = ({ icon: Icon, type, placeholder, name, value, onChange, requ
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        rows={multiline ? 4 : undefined}
-        className={`w-full ${multiline ? 'pt-4 pb-4' : 'h-14'} pl-14 pr-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 backdrop-blur-sm transition-all duration-300 focus:outline-none focus:border-blue-400/50 focus:bg-white/10 resize-none`}
+        rows={multiline ? 5 : undefined}
+        className={`w-full ${multiline ? 'pt-4 pb-4' : 'h-12'} pl-14 pr-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/40 backdrop-blur-sm transition-all duration-300 focus:outline-none focus:border-blue-400/50 focus:bg-white/10 resize-none`}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-      />
-      
-      <motion.div
-        className="absolute inset-0 rounded-xl border-2 border-blue-400/0 pointer-events-none"
-        animate={isFocused ? { borderColor: 'rgba(96, 165, 250, 0.3)' } : {}}
       />
     </div>
   )
 }
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  })
+  const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({ target: containerRef })
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
-  const headerY = useTransform(scrollYProgress, [0, 0.3], [0, -50])
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%'])
   
   const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }))
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
   
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000))
-    
     setIsSubmitting(false)
     setIsSubmitted(true)
-    
-    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false)
       setFormData({ name: '', email: '', company: '', message: '' })
@@ -217,72 +175,72 @@ export default function Contact() {
     <div ref={containerRef} className="min-h-screen bg-[#0B0B1A] text-white pt-24 relative overflow-hidden">
       {/* Animated Background */}
       <motion.div 
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
         style={{ y: backgroundY }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/10 to-pink-500/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10" />
         <FloatingParticles />
       </motion.div>
       
       <div className="relative z-10 px-6 sm:px-10 md:px-16">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto pb-20">
           {/* Header */}
           <motion.div 
-            className="text-center mb-20"
-            style={{ y: headerY }}
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
           >
             <motion.div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm text-white/80 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
             >
               <Sparkles className="w-4 h-4" />
-              Let's Build Something Amazing Together
+              Let's Build Together
             </motion.div>
             
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
               Get in Touch
-            </motion.h1>
-            
-            <motion.p 
-              className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              Ready to transform your digital presence? We're here to turn your vision into reality. 
-              Let's discuss your project and create something extraordinary together.
-            </motion.p>
+            </h1>
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              Ready to transform your vision into reality? Let's discuss your project.
+            </p>
           </motion.div>
           
           {/* Contact Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {contactInfo.map((info, index) => (
-              <ContactCard key={info.title} info={info} index={index} />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+            {contactInfo.map((info, index) => {
+              const Icon = info.icon
+              return (
+                <motion.a
+                  key={info.title}
+                  href={info.action}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className="block p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                >
+                  <div className={`w-10 h-10 mb-3 rounded-lg bg-gradient-to-br ${info.color} flex items-center justify-center`}>
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-sm font-semibold text-white/90 mb-1">{info.title}</h3>
+                  <p className={`text-sm font-medium bg-gradient-to-r ${info.color} bg-clip-text text-transparent mb-1`}>
+                    {info.value}
+                  </p>
+                  <p className="text-xs text-white/50">{info.description}</p>
+                </motion.a>
+              )
+            })}
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
+              className="lg:col-span-3"
             >
-              <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Send us a Message
-              </h2>
-              <p className="text-white/70 mb-8">
-                Tell us about your project and we'll get back to you within 24 hours.
-              </p>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <InputField
                     icon={User}
                     type="text"
@@ -306,7 +264,7 @@ export default function Contact() {
                 <InputField
                   icon={Building}
                   type="text"
-                  placeholder="Company Name (Optional)"
+                  placeholder="Company (Optional)"
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
@@ -324,31 +282,19 @@ export default function Contact() {
                 
                 <motion.button
                   type="submit"
-                  className="relative w-full h-14 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold overflow-hidden group disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full h-12 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold disabled:opacity-70"
                   disabled={isSubmitting || isSubmitted}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <AnimatePresence mode="wait">
                     {isSubmitted ? (
-                      <motion.div
-                        key="success"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="flex items-center justify-center gap-2"
-                      >
+                      <motion.div key="success" className="flex items-center justify-center gap-2">
                         <CheckCircle className="w-5 h-5" />
-                        Message Sent Successfully!
+                        Sent Successfully!
                       </motion.div>
                     ) : isSubmitting ? (
-                      <motion.div
-                        key="loading"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="flex items-center justify-center gap-2"
-                      >
+                      <motion.div key="loading" className="flex items-center justify-center gap-2">
                         <motion.div
                           className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
                           animate={{ rotate: 360 }}
@@ -357,82 +303,47 @@ export default function Contact() {
                         Sending...
                       </motion.div>
                     ) : (
-                      <motion.div
-                        key="default"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="flex items-center justify-center gap-2"
-                      >
-                        <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <motion.div key="default" className="flex items-center justify-center gap-2">
+                        <Send className="w-5 h-5" />
                         Send Message
                       </motion.div>
                     )}
                   </AnimatePresence>
-                  
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ zIndex: -1 }}
-                  />
                 </motion.button>
               </form>
             </motion.div>
             
             {/* Additional Info */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
-              className="space-y-8"
+              className="lg:col-span-2 space-y-6"
             >
-              <div>
-                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                  Why Choose Us?
-                </h3>
-                <div className="space-y-4">
-                  {[
-                    "Rapid Response Time (<24h)",
-                    "European Quality Standards",
-                    "Cutting-edge Technology",
-                    "Personalized Solutions",
-                    "Ongoing Support"
-                  ].map((item, index) => (
-                    <motion.div
-                      key={item}
-                      className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 1 + index * 0.1 }}
-                    >
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400" />
-                      <span className="text-white/80">{item}</span>
-                    </motion.div>
+              <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                <h3 className="text-lg font-bold mb-4">Why Choose Us?</h3>
+                <div className="space-y-3">
+                  {["<24h Response", "Expert Team", "Proven Results", "Ongoing Support"].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400" />
+                      <span className="text-white/80 text-sm">{item}</span>
+                    </div>
                   ))}
                 </div>
               </div>
               
-              <div>
-                <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-violet-400 bg-clip-text text-transparent">
-                  Follow Our Journey
-                </h3>
-                <p className="text-white/70 mb-6">
-                  Stay updated with our latest projects, insights, and innovations in the digital world.
-                </p>
-                
-                <div className="flex gap-4">
+              <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                <h3 className="text-lg font-bold mb-4">Follow Us</h3>
+                <div className="flex gap-3">
                   {socialLinks.map((social, index) => {
                     const Icon = social.icon
                     return (
                       <motion.a
-                        key={social.name}
+                        key={index}
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.color} flex items-center justify-center group hover:scale-110 transition-transform`}
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 1.5 + index * 0.1 }}
-                        whileHover={{ y: -3 }}
+                        className={`w-10 h-10 rounded-lg bg-gradient-to-br ${social.color} flex items-center justify-center`}
+                        whileHover={{ y: -3, scale: 1.05 }}
                       >
                         <Icon className="w-5 h-5 text-white" />
                       </motion.a>
@@ -440,21 +351,6 @@ export default function Contact() {
                   })}
                 </div>
               </div>
-              
-              <motion.div
-                className="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.8 }}
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <Globe className="w-6 h-6 text-blue-400" />
-                  <h4 className="font-bold text-white">Global Reach, Local Touch</h4>
-                </div>
-                <p className="text-white/70 text-sm">
-                  Serving clients worldwide. We combine global expertise with personalized, local service.
-                </p>
-              </motion.div>
             </motion.div>
           </div>
         </div>

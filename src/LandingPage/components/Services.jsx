@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Info } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const icons = {
-  design: (
+  ai: (
     <svg viewBox="0 0 24 24" className="w-5 h-5 text-white/80" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M12 3l9 9-9 9-9-9 9-9z" />
+      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
     </svg>
   ),
   dev: (
@@ -52,12 +53,12 @@ export default function Services() {
       <div className="max-w-6xl mx-auto py-20 md:py-28">
         <motion.h2 initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-2xl md:text-3xl font-semibold mb-8">What we do</motion.h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          <ServiceCard title="Design & UX" icon={icons.design} desc="Distinct brand identities and human-centered interfaces." />
-          <ServiceCard title="Web & Mobile" icon={icons.dev} desc="Accessible, scalable apps built with a modern stack." />
-          <ServiceCard title="E‑commerce" icon={icons.shop} desc="High-performance storefronts with robust integrations." />
+          <ServiceCard title="AI & Machine Learning" icon={icons.ai} desc="Intelligent automation and AI-powered solutions that transform businesses." />
+          <ServiceCard title="Web & Mobile" icon={icons.dev} desc="Accessible, scalable apps built with modern AI-enhanced stack." />
+          <ServiceCard title="E‑commerce" icon={icons.shop} desc="High-performance storefronts with AI-driven personalization." />
           <ServiceCard title="Headless CMS" icon={icons.cms} desc="Content systems that are fast and easy to manage." />
-          <ServiceCard title="Cloud & DevOps" icon={icons.cloud} desc="Secure infrastructure, CI/CD and observability." />
-          <ServiceCard title="Consulting" icon={icons.consult} desc="Strategy, audits and performance optimization." />
+          <ServiceCard title="Cloud & DevOps" icon={icons.cloud} desc="Secure infrastructure, CI/CD and AI-powered observability." />
+          <ServiceCard title="Consulting" icon={icons.consult} desc="Strategy, AI audits and performance optimization." />
         </div>
 
         {/* CTA Buttons */}
@@ -75,7 +76,6 @@ export default function Services() {
             Veja os nossos serviços
             <ArrowRight className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1" />
           </Link>
-          
         </motion.div>
       </div>
     </section>

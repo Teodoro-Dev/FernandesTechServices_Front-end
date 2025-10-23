@@ -14,12 +14,14 @@ import {
   Briefcase,
   Building,
   Smartphone,
-  Database
+  Database,
+  TrendingUp
 } from 'lucide-react'
 
 const categories = [
   { id: 'all', label: 'All Projects', icon: Filter },
   { id: 'ai', label: 'AI/ML', icon: Brain },
+  { id: 'finance', label: 'Finance', icon: TrendingUp },
   { id: 'web', label: 'Web Apps', icon: Smartphone },
   { id: 'ecommerce', label: 'E-commerce', icon: ShoppingCart },
   { id: 'trading', label: 'Trading', icon: Briefcase },
@@ -114,27 +116,48 @@ const projects = [
     link: "https://fernandesinnovations.com",
     color: "from-orange-500 to-red-500"
   },
-  // Proposed Projects
   {
     id: 5,
     title: "AI Financial Assistant",
     category: "ai",
-    description: "Intelligent chatbot for personal finance management with ML-powered insights.",
-    fullDescription: "Advanced AI-powered financial assistant that helps users manage their personal finances through natural language conversations. Features predictive analytics, budget recommendations, and investment insights.",
-    image: "/project-ai-finance.jpg",
-    smallImage: "/project-ai-finance.jpg",
-    tags: ["AI", "NLP", "Python", "React"],
-    technologies: ["Python", "TensorFlow", "React", "FastAPI", "PostgreSQL"],
+    description: "Fernandes Advisory AI Chatbot",
+    fullDescription: "Advanced AI-powered financial chatbot for Fernandes Advisory that provides intelligent financial guidance, investment insights, and personalized recommendations through natural language conversations.",
+    image: "/advisory.png",
+    smallImage: "/advisory2.png",
+    tags: ["AI", "Chatbot", "Finance"],
+    technologies: ["Python", "OpenAI", "React", "FastAPI", "LangChain"],
     features: [
-      "Natural language processing",
-      "Predictive budget analysis",
+      "Natural language financial advice",
+      "24/7 automated support",
       "Investment recommendations",
-      "Expense categorization",
-      "Financial goal tracking"
+      "Portfolio analysis",
+      "Market insights delivery"
     ],
     date: "March 2024",
-    link: "#",
+    link: "https://advisory.fernandesinnovations.com/chatbot",
     color: "from-blue-400 to-cyan-400"
+  },
+  {
+    id: 11,
+    title: "Fernandes Advisory",
+    category: "finance",
+    description: "Financial Consulting & Trading Mentoring",
+    fullDescription: "Comprehensive financial services platform offering personal and enterprise finance consulting, trading mentoring, and strategic financial planning. Dedicated to empowering individuals and businesses with expert financial guidance.",
+    image: "/add.png",
+    smallImage: "/add2.png",
+    tags: ["Finance", "Consulting", "Trading"],
+    technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "TailwindCSS"],
+    features: [
+      "Personal finance consulting",
+      "Enterprise financial planning",
+      "Trading mentoring programs",
+      "Investment strategy development",
+      "Financial goal tracking",
+      "Market analysis & insights"
+    ],
+    date: "March 2024",
+    link: "https://advisory.fernandesinnovations.com",
+    color: "from-emerald-600 to-teal-600"
   },
   {
     id: 6,

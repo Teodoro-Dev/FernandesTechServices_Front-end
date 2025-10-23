@@ -27,7 +27,7 @@ const socialLinks = [
   { icon: Linkedin, url: 'https://linkedin.com', label: 'LinkedIn', color: 'hover:text-blue-400' },
   { icon: Instagram, url: 'https://instagram.com', label: 'Instagram', color: 'hover:text-pink-400' },
   { icon: Facebook, url: 'https://facebook.com', label: 'Facebook', color: 'hover:text-blue-500' },
-  { icon: Github, url: 'https://github.com', label: 'Github', color: 'hover:text-purple-400' }
+  { icon: Github, url: 'https://github.com/Teodoro-Dev', label: 'Github', color: 'hover:text-purple-400' }
 ]
 
 const contactInfo = [
